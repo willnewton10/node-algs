@@ -1,0 +1,14 @@
+var quicksort = require('../lib/quicksort');
+var assert = require('assert');
+
+console.log("this happens");
+
+describe("quicksort", function () {
+    it('should SORT THE LIST YO! YAYAYA', function () {
+	assert.deepEqual([2,1,3], quicksort([1,2,3]));
+	assert.deepEqual([1,1,0], quicksort([0,1,1]));
+	assert.deepEqual([0], quicksort([0]));
+	assert.deepEqual([5,4,3,2,1], quicksort([1,2,3,4,5]));
+	assert.deepEqual([10,10,8,8,7,7,3,1], quicksort([1,3,7,7,8,8,10,10]));
+    });
+});

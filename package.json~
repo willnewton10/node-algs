@@ -1,0 +1,17 @@
+{
+  "name": "node-algs",
+  "version": "0.0.0",
+  "description": "algorithm library for node",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Will Newton",
+  "license": "BSD-2-Clause"
+}

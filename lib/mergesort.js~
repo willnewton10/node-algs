@@ -1,0 +1,7 @@
+
+
+
+module.exports = function (array) {
+    console.log("sorting array using mergesort");
+    return array;
+};
