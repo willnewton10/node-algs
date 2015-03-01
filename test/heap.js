@@ -35,7 +35,8 @@ describe("Heap", function () {
 	var popped = [];
 	while(heap.any()) popped.push(heap.pop());
 
-	assert.deepEqual(elements.sort(), popped);
+	elements.sort(function (a, b) { return a - b; });
+	assert.deepEqual(elements, popped);
     });
     it('should throw an exception when popping from empty state', function () {
 	var heap = heapFactory();
@@ -54,5 +55,24 @@ describe("Heap", function () {
 	assert.throws(function () {
 	    heap.add(null);
 	}, Error);
+    });
+    it('should work for bigger arrays too', function () {
+	var heap = heapFactory();
+
+	var arr = [];
+	for (var i=0; i<10000; i++) {
+	    arr.push(Math.floor(Math.random() * 100));
+	    heap.add(arr[arr.length - 1]);
+	}
+
+	var arr2 = [];
+	var last = -1;
+	while(heap.any()) {
+	    var el = heap.pop();
+	    arr2.push(el);
+	    last = el;
+	}
+	arr.sort(function (a, b) { return a - b; });
+	assert.deepEqual(arr, arr2);
     });
 });
