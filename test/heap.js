@@ -37,4 +37,22 @@ describe("Heap", function () {
 
 	assert.deepEqual(elements.sort(), popped);
     });
+    it('should throw an exception when popping from empty state', function () {
+	var heap = heapFactory();
+	
+	assert.throws(function () {
+	    heap.pop();
+	}, Error);
+    });
+    it('should throw an exception when adding an undefined or null element', function () {
+	var heap = heapFactory();
+	
+	assert.throws(function () {
+	    heap.add(undefined);
+	}, Error);
+
+	assert.throws(function () {
+	    heap.add(null);
+	}, Error);
+    });
 });
