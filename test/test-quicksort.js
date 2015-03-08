@@ -1,8 +1,6 @@
 var quicksort = require('../lib/quicksort');
 var assert = require('assert');
 
-console.log("this happens");
-
 describe("quicksort", function () {
     it('should ... sort the list!', function () {
 	assert.deepEqual(quicksort([]), []);

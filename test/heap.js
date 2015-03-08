@@ -60,8 +60,19 @@ describe("Heap", function () {
 	var heap = heapFactory();
 
 	var arr = [];
+	
+	var lastNumber = 11; /* arbitrary */
+	var mod = 1334;      /* arbitrary */
+	var factor = 131;    /* arbitrary */
+	/* just generating some pseudo-pseudo-random-numbers predictably*/
+	function generateNumber() {
+	    lastNumber = (lastNumber * factor) % mod;
+	    console.log("generate number", lastNumber);
+	    return lastNumber;
+	}
+
 	for (var i=0; i<10000; i++) {
-	    arr.push(Math.floor(Math.random() * 100));
+	    arr.push(generateNumber());
 	    heap.add(arr[arr.length - 1]);
 	}
 
