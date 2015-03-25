@@ -61,13 +61,12 @@ describe("Heap", function () {
 
 	var arr = [];
 	
-	var lastNumber = 11; /* arbitrary */
-	var mod = 1334;      /* arbitrary */
-	var factor = 131;    /* arbitrary */
+	var lastNumber = 17; /* arbitrary */
+	var mod = 1000;      /* arbitrary */
+	var factor = 4311;    /* arbitrary */
 	/* just generating some pseudo-pseudo-random-numbers predictably*/
 	function generateNumber() {
 	    lastNumber = (lastNumber * factor) % mod;
-	    console.log("generate number", lastNumber);
 	    return lastNumber;
 	}
 
